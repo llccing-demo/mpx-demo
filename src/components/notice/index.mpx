@@ -1,0 +1,61 @@
+<template>
+  <view wx:class="notice">
+    <swiper wx:class="notice-swiper" vertical="{{true}}" autoplay="{{true}}" circular="{{true}}" interval="{{2000}}">
+      <view wx:class="swiper-box">
+        <block wx:key="index" wx:for="{{data}}">
+          <swiper-item>
+            <view wx:class="content">
+              <view wx:class="user">
+                <view wx:class="name">{{item.name}}</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </view>
+    </swiper>
+  </view>
+</template>
+
+<script>
+import { createComponent } from '@mpxjs/core'
+createComponent({
+  properties: {
+    data: Array
+  },
+  data: {
+  },
+  pageShow () {
+  },
+  pageHide () {
+  },
+  methods: {
+  }
+})
+</script>
+
+<style lang='stylus'>
+.notice
+  height 30px
+  line-height 30px
+  padding 0 15px
+  background-color #ddd
+  border-radius 20px
+  font-size 12px
+  .notice-swiper
+    height 30px
+  .content
+    display flex
+    justify-content space-between
+    .user
+      display flex
+      align-content center
+      justify-content center
+      color #333
+</style>
+<script type="application/json">
+{ 
+  "component": true,
+  "usingComponents": {}
+}
+</script>
+

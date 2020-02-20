@@ -1,11 +1,22 @@
 <template>
-  <list></list>
+  <view wx:class="notice-wrapper">
+    <notice data="{{ notice }}"></notice>
+  </view>
 </template>
 
 <script>
   import { createPage } from '@mpxjs/core'
 
   createPage({
+    data: {
+      notice: [{
+        name: '这是一条最新的中奖通知'
+      }, {
+        name: '这是一条最新的中奖通知 66666'
+      }, {
+        name: '这是一条最新的中奖通知 777777'
+      }]
+    },
     onLoad () {}
   })
 </script>
@@ -13,7 +24,8 @@
 <script type="application/json">
   {
     "usingComponents": {
-      "list": "../components/list"
+      "list": "../components/list",
+      "notice": "../components/notice"
     }
   }
 </script>
